@@ -34,7 +34,7 @@ Ideally, a bounded context should contain a model tailored around a specific *pu
 
 Whenever we realize a different purpose is emerging, we should give a chance to a new model, fitting the new purpose, and then find the best way to allow the two models interact.
 
-![Two distinct purposes should map to two different models, inside different bounded contexts.](images/alberto-brandolini/Two_bounded_contexts.png)
+![Two distinct purposes should map to two different models, inside different bounded contexts.](../images/alberto-brandolini/Two_bounded_contexts.png)
 
 Unfortunately, _a single specific purpose_ is not a very actionable criterion to discover boundaries in our model. The idea of 'purpose' is too vague to draw actionable boundaries: developers might be looking for a clear, well-defined purpose, while business stakeholder might be a little more coarse-grained, like “I need an Employee Management Solution[^MINAP].”
 
@@ -44,7 +44,7 @@ Put in another way, the business stakeholders are not a reliable source of direc
 
 It's our job as software architects to discover boundaries in our domain, and this will be more an investigation on a crime scene than a _tick-the-checkboxes_ conversation.
 
-![The knowledge distribution in an organization: a weird combination of knowledge and ignorance.](images/alberto-brandolini/Overlapping_expertises_and_ignorances.png)
+![The knowledge distribution in an organization: a weird combination of knowledge and ignorance.](../images/alberto-brandolini/Overlapping_expertises_and_ignorances.png)
 
 Nobody knows the whole truth. Let's stop pretending somebody can.
 
@@ -60,11 +60,11 @@ At the very root the recipe is really simple:
 
 In an EventStorming workshop, domain events — or just _events_ — are not software constructs: they're short sentences written on a sticky note, using a verb at the past tense.
 
-![The simplest possible explanation of a domain event](images/alberto-brandolini/Domain_event_explanation.png)
+![The simplest possible explanation of a domain event](../images/alberto-brandolini/Domain_event_explanation.png)
 
 With a little facilitation magic, in a few hours, we end up with a big behavioural model of the entire organization: something like the one in the picture below.
 
-![The output of a Big Picture EventStorming, on a conference organization scenario](images/alberto-brandolini/Big_Picture_conference_scenario.jpg)
+![The output of a Big Picture EventStorming, on a conference organization scenario](../images/alberto-brandolini/Big_Picture_conference_scenario.jpg)
 
 A massive flood of colored sticky notes, apparently. But, as the adagio says, _it's the journey, not the destination_: the process of visualizing the whole business flow, with the active participation of all the key stakeholders, is our way to trigger critical insights and discoveries.
 
@@ -84,7 +84,7 @@ The more participants, the harder it is to follow a timeline: diverging perspect
 
 Far from perfect, but a good starting point. Now we see stuff.
 
-![The possible outcome of a chaotic exploration round in a Big Picture EventStorming.](images/alberto-brandolini/ES_Big_picture-after_chaotic_plus_notes.png)
+![The possible outcome of a chaotic exploration round in a Big Picture EventStorming.](../images/alberto-brandolini/ES_Big_picture-after_chaotic_plus_notes.png)
 
 Moreover, this first step is usually _silent_: people will quietly place their braindump on the wall, wherever there's enough space available. Not so many conversations are happening. Next steps will be noisier.
 
@@ -94,7 +94,7 @@ Actually, we want this phase to be quiet: people should not agree yet about what
 
 As a result, we'll end up with a lot of _duplicated_ sticky notes, or _apparently duplicated_ ones.
 
-![Different wordings are often a clue of different underlying meanings.](images/alberto-brandolini/ES_Big_picture-duplicated_events.png)
+![Different wordings are often a clue of different underlying meanings.](../images/alberto-brandolini/ES_Big_picture-duplicated_events.png)
 
 It's usually a good idea to resist the temptation to resolve those duplicates and find and _agree_ on a single wording choice. Different wording may refer to different perspectives on the same event, hinting that this might be relevant in more than one Bounded Context, or that the two or more events aren't the same thing.
 
@@ -104,7 +104,7 @@ This discordance is already telling us something: this event (assuming or preten
 
 That's cool! It might be a hint of multiple overlapping contexts.
 
-![Different meanings may point to different models, hence different contexts.](images/alberto-brandolini/ES_Big_picture-duplicated_events_maybe_overlapping_contexts.png)
+![Different meanings may point to different models, hence different contexts.](../images/alberto-brandolini/ES_Big_picture-duplicated_events_maybe_overlapping_contexts.png)
 
 I didn't say _“bounded”_ because the boundaries aren't clear yet.
 
@@ -144,13 +144,13 @@ In our conference organization scenario, we might spot a few candidates.
 
 I usually mark the candidate events with colored tape, so that they're visible and we have a visible hint of distinct phases.
 
-![A piece of colored replaceable tape is my favorite tool for marking pivotal events.](images/alberto-brandolini/Pivotal_events_shaded.png)
+![A piece of colored replaceable tape is my favorite tool for marking pivotal events.](../images/alberto-brandolini/Pivotal_events_shaded.png)
 
 It doesn't matter to pick the right ones, so I often keep this discussion short. I look for 4-5 candidate events that seem to fit that role. Mostly to sort out the internal events faster. We can still improve the model later if needed.
 
 After highlighting pivotal events, sorting becomes a lot faster inside the boundaries, and a more sophisticated structure starts to emerge.
 
-![Pivotal Events are a great source of information.](images/alberto-brandolini/ES_Big_picture-pivotal_events.png)
+![Pivotal Events are a great source of information.](../images/alberto-brandolini/ES_Big_picture-pivotal_events.png)
 
 #### Using Swimlanes
 
@@ -162,7 +162,7 @@ In our conference scenario, we can spot a few main themes that happen more or le
 
 Our replaceable tape comes in handy also to give a name to these parallel flows. The underlying structure backbone will now probably look something like this:
 
-![Pivotal Events and Swimlanes provide an emergent structure on top of the flow of Domain Events.](images/alberto-brandolini/ES_Big_picture-multiple_sorting_strategies.png)
+![Pivotal Events and Swimlanes provide an emergent structure on top of the flow of Domain Events.](../images/alberto-brandolini/ES_Big_picture-multiple_sorting_strategies.png)
 
 Everybody now sees the different _phases_ of the business and the key relevant issues at every step.
 
@@ -170,7 +170,7 @@ Everybody now sees the different _phases_ of the business and the key relevant i
 
 In this phase, we start exploring the surroundings of our business, explicitly looking for **people**: actors, users, personas, or specific roles in our system; and **systems**: from software components and tools to external organizations. Nothing excluded.
 
-![Here's the incredibly simple notation for people and systems.](images/alberto-brandolini/People_and_systems.png)
+![Here's the incredibly simple notation for people and systems.](../images/alberto-brandolini/People_and_systems.png)
 
 Visualizing different actors in our system — in practice, we don't call them _actors_ just _people_ — helps to dig into the different perspectives. We might discover specific responsibilities and roles, or differing perceptions: all speakers are submitting talks, but the treatment can be different if we're talking about a superstar guest, invited as a keynote speaker, an expert or a newbie. A puzzled look during this exploration phase may end up in opening an entirely new branch or making different strategies more visible and readable.
 
@@ -192,7 +192,7 @@ The audience should not be passive. Participants are often challenging the narra
 
 The more we progress along the timeline, the more clarity is provided to the flow, while the narrator is progressing like a _defrag cursor[^IYOETR]_.
 
-![An explicit walkthrough round is our way to validate our understanding.](images/alberto-brandolini/ES_Big_picture-walkthrough.png)
+![An explicit walkthrough round is our way to validate our understanding.](../images/alberto-brandolini/ES_Big_picture-walkthrough.png)
 
 ### Extra steps
 
@@ -221,13 +221,13 @@ There's a lot of Bounded Context related info that comes as a byproduct of our d
 
 Similarly, after `Ticket Sold` events, we'll be the temporary owners of attendees' money, but they'll start to get some value back only around the `Conference Started` event. But the tools and the mental models needed to _design_ a conference, are not the same tools needed to _run_ a conference.
 
-![A zoom-in into a pivotal event](images/alberto-brandolini/pivotal_events_and_BCs.png)
+![A zoom-in into a pivotal event](../images/alberto-brandolini/pivotal_events_and_BCs.png)
 
 Interestingly, boundary events are also the ones with different conflicting wordings. Here is where the perception of bounded contexts usually overlaps. A key recommendation here is that _you don't have to agree on the language!_ There's much more to discover by making disagreements visible.
 
 Moreover, keep in mind that when two models are interacting, there are usually _three_ models involved: the internal models of the two bounded contexts and the _communication model_ used to exchange information between them.
 
-![Two interacting models usually mean three languages.](images/alberto-brandolini/Two_BCs_three_languages.png)
+![Two interacting models usually mean three languages.](../images/alberto-brandolini/Two_BCs_three_languages.png)
 
 A simple example: I am trying to communicate with my readers using the English language, but I am not a native English speaker. My internal reasoning model is sometimes English too, and sometimes Italian. But readers shouldn't be able to tell (I hope). At the same time, this text is not intended for British and American people only, every reader will translate into their mental model, possibly in their native language.
 
@@ -235,7 +235,7 @@ In general, **different phases** usually mean **different problems**, which usua
 
 **Pivotal Events** are usually part of a more general _published language_ shared between the different parties.
 
-![Emerging bounded contexts after a Big Picture EventStorming.](images/alberto-brandolini/Emergent_Bounded_Context.png)
+![Emerging bounded contexts after a Big Picture EventStorming.](../images/alberto-brandolini/Emergent_Bounded_Context.png)
 
 The picture above shows more or less what I am seeing when looking at the flow with Bounded Contexts in mind.
 
@@ -245,7 +245,7 @@ Swimlanes often show different paths that involve different models.
 
 Not every swimlane is a Bounded Context, sometimes they're just an _if_ statement somewhere, but when swimlanes are emerging for the need to highlight an independent process, possibly _on a different timeline_, then you might want to give a shot to an independent model.
 
-![Swimlanes are usually a reliable clue for possible different bounded contexts.](images/alberto-brandolini/ES_Swimlanes_as_BC_hints.png)
+![Swimlanes are usually a reliable clue for possible different bounded contexts.](../images/alberto-brandolini/ES_Swimlanes_as_BC_hints.png)
 
 ### Heuristic: look at the people on the paper roll
 
@@ -253,7 +253,7 @@ An interesting twist might happen when dealing with different _personas_. Appare
 
 Conference organizers or track hosts can invite some speakers, while others submit their proposals in the Call for Papers. The flows can be independent in the upstream part of the flow (you may want to skip a cumbersome review process for a superstar speaker). Downstream they're probably not (on the conference schedule, you want the same data, regardless of how you got it).
 
-![Two parallel flows may require independent models.](images/alberto-brandolini/parallel_flows_and_personas.png)
+![Two parallel flows may require independent models.](../images/alberto-brandolini/parallel_flows_and_personas.png)
 
 Some organizations are well-equipped to think in terms of _roles_: they'll recognize that speakers and keynote speakers are different in the left part of the flow, but they'll have a similar badge during the _registration process_, and they won't be different from regular attendees during lunchtime, when their role would be a simple `mouth to feed`.
 
@@ -277,7 +277,7 @@ Once again: **different needs** mean **different models**.
 
 It doesn't end here. A typical conversational pattern often happening around pivotal or boundary events is the one in the picture below.
 
-![A typical competence clash, the persons on the left usually know all the mechanics involved in a given step, while the ones on the right only care about the outcome.](images/alberto-brandolini/Task_list-vs_ignorance.png)
+![A typical competence clash, the persons on the left usually know all the mechanics involved in a given step, while the ones on the right only care about the outcome.](../images/alberto-brandolini/Task_list-vs_ignorance.png)
 
 There is complex knowledge about _everything is needed to complete something_ and it's often similar to a task list. On the downstream side of the pivotal event, this complexity should vanish: people usually don't care about the _how_, but only about the _what_.
 
